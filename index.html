@@ -17,7 +17,7 @@
       <div id="setup">
         <label for="memberCount">Enter the number of members:</label>
         <div class="inputMember">
-          <input type="number" id="memberCount" min="1" />
+          <input type="number" id="memberCount" min="1" placeholder="EX: 4" />
         </div>
         <div class="buttonNext">
           <button onclick="setupMembers()">Next</button>
@@ -34,7 +34,7 @@
         <div class="scoreTableHeader">
           <h2>Score Table</h2>
           <div class="buttonAction">
-            <button onclick="addRound()">Add Round</button>
+            <button onclick="addRound()">Add Score</button>
             <button onclick="finishGame()">Finish</button>
           </div>
         </div>
@@ -64,6 +64,9 @@
           </thead>
           <tbody id="moneyTableBody"></tbody>
         </table>
+        <div class="buttonPlayAgain">
+          <button onclick="resetGame()">Play Again</button>
+        </div>
       </div>
     </div>
 

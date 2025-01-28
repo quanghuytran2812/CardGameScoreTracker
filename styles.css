@@ -10,10 +10,11 @@ body {
 
 .container {
   margin: 20px 0;
-  width: fit-content;
+  width: min(900px, 100% -3rem);
+  margin-inline: auto;
   border-radius: 20px;
   background: #eee;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .title{
@@ -152,10 +153,13 @@ tbody tr:hover {
   color: #555;
 }
 #scoreTable .buttonAction{
+  display: flex;
+  gap: 4px;
   text-align: right;
 }
 
-#scoreTable .buttonAction button, .moneyTableHeader button, .dialog-content button {
+#scoreTable .buttonAction button, .moneyTableHeader button, 
+.dialog-content button{
   background-image: linear-gradient(to bottom, #A12CEE, #7248CF);
   color: #eee;
   font-size: small;
@@ -165,7 +169,22 @@ tbody tr:hover {
   cursor: pointer;
   text-transform: uppercase;
 }
+.buttonPlayAgain{
+  margin: 10px 20px;
+  text-align: right;
+}
+.buttonPlayAgain button {
+  background-color: black;
+  color: #eee;
+  font-size: small;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
 .dialog-content .buttonActionDialog{
+  margin-top: 20px;
   text-align: right;
 }
 #scoreDialog, #editDialog {
@@ -203,7 +222,6 @@ tbody tr:hover {
 .dialog-content input {
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
   box-sizing: border-box;
 }
 
@@ -220,11 +238,7 @@ tbody tr:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
-  .container {
-      padding: 10px;
-  }
-
+@media (max-width: 650px) {
   h2 {
       font-size: 20px;
   }
@@ -240,6 +254,10 @@ tbody tr:hover {
 
   .dialog-content {
       width: 90%;
+  }
+  .moneyTableHeader input{
+    width: 94%;
+    margin: 5px 0;
   }
 }
 

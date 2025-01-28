@@ -10,7 +10,7 @@ function setupMembers() {
     nameInputs.innerHTML = '';
 
     for (let i = 0; i < memberCount; i++) {
-        nameInputs.innerHTML += `<input type="text" placeholder="Member ${i + 1} Name">`;
+        nameInputs.innerHTML += `<input type="text" placeholder="Name of member ${i + 1}">`;
     }
 
     document.getElementById('setup').style.display = 'none';
@@ -139,4 +139,20 @@ function calculateMoney() {
 function CurrencyFormatVND(value) {
     // Format the number with dots as thousand separators
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ₫';
+}
+
+function resetGame() {
+    members = [];
+    rounds = [];
+    currentRound = 0;
+    document.getElementById('setup').style.display = 'block';
+    document.getElementById('nameEntry').style.display = 'none';
+    document.getElementById('scoreTable').style.display = 'none';
+    document.getElementById('moneyTable').style.display = 'none';
+    document.getElementById('memberCount').value = '';
+    document.getElementById('nameInputs').innerHTML = '';
+    document.getElementById('headerRow').innerHTML = '';
+    document.getElementById('tableBody').innerHTML = '';
+    document.getElementById('totalRow').innerHTML = '';
+    document.getElementById('moneyTableBody').innerHTML = '';
 }
