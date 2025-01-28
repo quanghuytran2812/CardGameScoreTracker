@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Game Score Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <img
+          src="https://i.pinimg.com/564x/19/5e/7e/195e7eb7d78372dc7410f726a0eeddfc.jpg"
+        />
+        Card Game Score Tracker
+      </div>
+      <div id="setup">
+        <label for="memberCount">Enter the number of members:</label>
+        <div class="inputMember">
+          <input type="number" id="memberCount" min="1" />
+        </div>
+        <div class="buttonNext">
+          <button onclick="setupMembers()">Next</button>
+        </div>
+      </div>
+      <div id="nameEntry" style="display: none">
+        <label for="memberCount">Enter the number of members:</label>
+        <div id="nameInputs"></div>
+        <div class="buttonNext">
+          <button onclick="createScoreTable()">Create Table</button>
+        </div>
+      </div>
+      <div id="scoreTable" style="display: none">
+        <div class="scoreTableHeader">
+          <h2>Score Table</h2>
+          <div class="buttonAction">
+            <button onclick="addRound()">Add Round</button>
+            <button onclick="finishGame()">Finish</button>
+          </div>
+        </div>
+        <table id="table">
+          <thead>
+            <tr id="headerRow"></tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+          <tfoot>
+            <tr id="totalRow"></tr>
+          </tfoot>
+        </table>
+      </div>
+      <div id="moneyTable" style="display: none">
+        <div class="moneyTableHeader">
+          <h2>Total Money Table</h2>
+          <label for="amount">Enter the amount per point:</label>
+          <input type="number" id="amount" min="0" />
+          <button onclick="calculateMoney()">Calculate Money</button>
+        </div>
+        <table id="moneyTableContent">
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Total Money</th>
+            </tr>
+          </thead>
+          <tbody id="moneyTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="scoreDialog" style="display: none">
+      <div class="dialog-content">
+        <h2>Enter Scores</h2>
+        <div id="scoreInputs"></div>
+        <div class="buttonActionDialog">
+          <button onclick="submitScores()">Add</button>
+          <button onclick="closeDialog()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="editDialog" style="display: none">
+      <div class="dialog-content">
+        <h2>Edit Scores</h2>
+        <div id="editInputs"></div>
+        <div class="buttonActionDialog">
+          <button onclick="updateScores()">Update</button>
+          <button onclick="closeEditDialog()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
